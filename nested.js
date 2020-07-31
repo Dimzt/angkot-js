@@ -1,12 +1,14 @@
 let s = '';
 for (let i = 0; i < 5; i++) {
-  for (let k = 0; k < i; k++) {
-    s += ' ';
-  }
-  for (let j = i; j < 5; j++) {
+  for (let j = 0; j <= i; j++) {
     s += '*';
   }
   s += '\n';
 }
-
+for (let i = 0; i < 5; i++) {
+  for (let j = i; j < 4; j++) {
+    s += '*';
+  }
+  s += '\n';
+}
 console.log(s);
