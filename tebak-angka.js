@@ -12,10 +12,22 @@ while (nyawa > 0) {
   hasil = '';
   if (p > comp) {
     hasil = "TINGGI!";
-    alert(`terlalu ${hasil}\nayo masih ada ${nyawa} kesempatan`);
+    // end
+    if (nyawa == 1) {
+      alert(`terlalu ${hasil}\nkesempatan anda habis`);
+      alert(`anda GAGAL!\nangka yang dicari adalah ${comp}`);
+      break;
+    }
+    alert(`terlalu ${hasil}\nayo masih ada ${nyawa-1} kesempatan`);
+
   } else if (p < comp) {
     hasil = "RENDAH!";
-    alert(`terlalu ${hasil}\nayo masih ada ${nyawa} kesempatan`);
+    if (nyawa == 1) {
+      alert(`terlalu ${hasil}\nkesempatan anda habis`);
+      alert(`anda GAGAL!\nangka yang dicari adalah ${comp}`);
+      break;
+    }
+    alert(`terlalu ${hasil}\nayo masih ada ${nyawa-1} kesempatan`);
   } else {
     alert(`anda BENAR!\nangka yang dicari adalah : ${comp}`);
     break;
@@ -24,10 +36,5 @@ while (nyawa > 0) {
   nyawa--;
 }
 
-// end
-if (nyawa == 0) {
-  alert(`terlalu ${hasil}\nkesempatan anda habis`);
-  alert(`anda GAGAL!\nangka yang dicari adalah ${comp}`);
-}
 
 alert("terima kasih");
