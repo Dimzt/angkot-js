@@ -1,4 +1,4 @@
-let penumpang = ['Anton', undefined];
+let penumpang = [];
 const tambahPenumpang = (namaPenumpang, penumpang) => {
   // jika angkot kosong
   if (penumpang.length === 0) {
@@ -30,6 +30,23 @@ const tambahPenumpang = (namaPenumpang, penumpang) => {
         // tambah penumpang di akhir array
         penumpang.push(namaPenumpang);
         // kembalikan isi array & keluar dari function
+        return penumpang;
+      }
+    }
+  }
+}
+
+const hapusPenumpang = (namaPenumpang, penumpang) => {
+  if (penumpang.length === 0) {
+    console.log('Angkot masih kosong!');
+    return penumpang;
+  } else {
+    for (let i = 0; i < penumpang.length; i++) {
+      if (penumpang[i] === namaPenumpang) {
+        penumpang[i] = undefined;
+        return penumpang;
+      } else if (i === penumpang.length - 1) {
+        console.log(`${namaPenumpang} tidak ada di dalam Angkot.`);
         return penumpang;
       }
     }
